@@ -1,0 +1,476 @@
+@import "./_fonts.scss";
+@import "./_variable.scss";
+@import "./_mixin.scss";
+@import "~bootstrap/scss/bootstrap";
+
+// LOGIN
+.login_admin {
+  @include displayFullScreen;
+  margin-block: 5% 8%;
+  @include flexA;
+
+  h2 {
+    font-size: 3vh;
+    font-weight: 800;
+    margin-bottom: 3vh;
+  }
+
+  article {
+    width: 60%;
+    height: auto;
+    padding: 2%;
+    border: 0.1vh solid $txt;
+    box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 70px 70px 0px;
+    @include flexB;
+    justify-content: space-around;
+
+    img {
+      width: 20%;
+    }
+
+    h3 {
+      color: $red;
+      font-size: 2vh;
+    }
+
+    form {
+      width: 50%;
+      height: auto;
+      padding-inline: 5%;
+
+      div {
+        label {
+          margin-block: 2vh;
+        }
+
+        input,
+        textarea,
+        select {
+          @include form;
+        }
+      }
+
+      button,
+      .btn_login {
+        width: 80%;
+        height: 6vh;
+        font-size: 2vh;
+        font-weight: 500;
+        background-color: $white;
+        border: $txt solid 0.1vh;
+
+        &:hover {
+          background-color: $txt;
+          color: $white;
+        }
+      }
+      button {
+        margin: 5% 10% 4% 10%;
+      }
+      .btn_login {
+        margin: 15% 10% 4% 10%;
+      }
+    }
+  }
+
+  #a_recover_up,
+  #a_recover_down {
+    color: $txt;
+    font-size: 2vh;
+    margin-block: 3vh 1vh;
+    text-decoration: none;
+    display: block;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  #a_recover_down {
+    display: none;
+  }
+
+  // MEDIA QUERRIES
+  // LOGIN
+  @media only screen and (max-width: 800px) {
+    margin-block: 15% 15%;
+
+    h2 {
+      font-size: 2vh;
+    }
+
+    article {
+      width: 90%;
+      border: none;
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+      border-radius: 0px 30px 30px 0px;
+
+      h3 {
+        font-size: 2vh;
+        text-align: center;
+      }
+
+      img {
+        width: 30%;
+        margin: 5% 10% 10% 0;
+      }
+
+      form {
+        width: 50%;
+        margin-inline: 5% 5%;
+        font-size: 1.8vh;
+
+        div {
+          input,
+          textarea,
+          select {
+            height: 4vh;
+          }
+
+          option {
+            font-size: 1.8vh;
+          }
+        }
+        #a_recover_up {
+          display: none;
+        }
+
+        button {
+          width: 100%;
+          height: 4vh;
+          font-size: 1.6vh;
+          margin: 20% 0 10% 0;
+          background-color: $black !important;
+          color: $white !important;
+
+          &:active, &:checked, &:focus, &:hover{
+            background-color: $white !important;
+            color: $black !important;
+          }
+        }
+      }
+    }
+    #a_recover_down {
+      display: block;
+    }
+  }
+}
+
+// MENU
+// GENERAL
+//  nav and disconnecting button
+.nav_SelectionMenu {
+  background-color: $black;
+  height: 10vh;
+  width: 100%;
+
+  // btn Disconnect
+  button {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: $black;
+    border-radius: 0 !important;
+    border: 2px $black solid !important;
+    color: $white;
+
+    img {
+      width: 4vh;
+      height: auto;
+      filter: brightness(0) saturate(100%) invert(99%) sepia(3%) saturate(832%)
+        hue-rotate(282deg) brightness(116%) contrast(100%);
+    }
+
+    &:hover {
+      background-color: $white;
+      color: $black;
+      font-weight: 600;
+
+      img {
+        filter: none;
+      }
+    }
+  }
+  @media only screen and (max-width: 800px) {
+    button {
+      font-size: 1.6vh;
+      width: 40%;
+
+      img {
+        width: 3vh;
+      }
+    }
+  }
+}
+
+// Selection Menu
+
+.main_SelectionMenu {
+  @include displayFullScreen;
+
+  // container display name
+  div:first-child {
+    width: 35%;
+    height: 23vh;
+    margin: 5% 33% 10% 33%;
+    @include center;
+    background-image: url("../../public/assets/images/splater.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    p {
+      text-align: center;
+      font-size: 2.5vh;
+      line-height: 6vh;
+      font-weight: 600;
+    }
+  }
+
+  // cards container
+  .container-fluid:last-child {
+    width: 90%;
+    @include flexB;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: -5% 5% 5% 5%;
+
+    // cards
+    .card_back {
+      margin: 3%;
+    }
+    .card_back:first-child {
+      @include imgCardA;
+      background-image: url("../../public/assets/photos/key_ring.avif");
+    }
+
+    .card_back:nth-child(2) {
+      background-image: url("../../public/assets/photos/workflow.avif");
+      @include imgCardA;
+    }
+
+    .card_back:nth-child(3) {
+      background-image: url("../../public/assets/photos/solidarity.avif");
+      @include imgCardA;
+    }
+
+    .card_back:nth-child(4) {
+      background-image: url("../../public/assets/photos/hire.avif");
+      @include imgCardA;
+    }
+
+    .card_back:nth-child(5) {
+      background-image: url("../../public/assets/photos/roadtag.avif");
+      @include imgCardA;
+    }
+
+    .card_back:nth-child(6) {
+      background-image: url("../../public/assets/photos/bedroom.avif");
+      @include imgCardA;
+    }
+
+    .card_back:nth-child(7) {
+      background-image: url("../../public/assets/photos/rentroom.avif");
+      @include imgCardA;
+    }
+
+    .card_back:last-child {
+      background-image: url("../../public/assets/photos/food.avif");
+      @include imgCardA;
+    }
+  }
+}
+
+// MEDIA QERRIES
+// SELECTION MENU
+@media only screen and (max-width: 800px) {
+  //  nav and disconnecting button
+  .nav_SelectionMenu {
+    height: 6vh;
+
+    a {
+      width: 25vh;
+
+      h2 {
+        font-size: 1.6vh;
+        margin-block: 1vh;
+      }
+
+      img {
+        width: 3vh;
+      }
+    }
+  }
+
+  // main
+  .main_SelectionMenu {
+    div:first-child {
+      width: 80%;
+      height: 18vh;
+      margin: 10%;
+      background-size: 80%;
+      p {
+        font-size: 1.8vh;
+        line-height: 4vh;
+      }
+    }
+  }
+}
+
+// MODERATOR PAGE
+// NO NEED MEDIA QUERRIES
+.manage_mod {
+  display: flex;
+  flex-direction: row;
+  margin-block: 5%;
+}
+
+// MANAGE ROOM
+.manageRoom {
+  width: 60%;
+  height: auto;
+  margin: 5% 20%;
+
+  .accordion-item {
+    border: solid $txt 0.1vh;
+    margin-bottom: 3vh;
+    background-color: $white;
+
+    .accordion-header,
+    .accordion-button {
+      height: 10vh !important;
+      font-weight: 500;
+      font-size: 2.5vh;
+
+      :focus {
+        box-shadow: none !important;
+      }
+
+      :not(.collapsed) {
+        background-color: $txt;
+        color: $white;
+        box-shadow: none !important;
+      }
+      .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+      }
+    }
+  }
+}
+
+// MEDIA QERRIES
+// MANAGE ROOM
+@media only screen and (max-width: 800px) {
+  .manageRoom {
+    width: 95%;
+    margin: 2.5%;
+  }
+}
+
+// MANAGE PATH
+// GENERAL
+.pathBed,
+.pathEvent,
+.pathFood {
+  width: 75%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  h2 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 3.5vh;
+    margin-block: 10%;
+  }
+  div {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10%;
+  }
+}
+
+// PATH ARTICLES
+.pathEvent {
+  div {
+    .card_back:first-child {
+      background-image: url("../../public/assets/photos/event.avif");
+      @include imgCardB;
+    }
+
+    .card_back:last-child {
+      background-image: url("../../public/assets/photos/newspaper.avif");
+      @include imgCardB;
+    }
+  }
+}
+
+// PATH ACCOMODATIONS
+.pathBed {
+  div {
+    .card_back:first-child {
+      background-image: url("../../public/assets/photos/bedroom2.avif");
+      @include imgCardB;
+    }
+  }
+  .card_back:last-child {
+    background-image: url("../../public/assets/photos/dorms.avif");
+    @include imgCardB;
+  }
+}
+
+// FOOD
+.pathFood {
+  div {
+    .card_back:first-child {
+      background-image: url("../../public/assets/photos/caterer.avif");
+      @include imgCardB;
+    }
+
+    .card_back:last-child {
+      background-image: url("../../public/assets/photos/restaurant.avif");
+      filter: grayscale(1);
+      cursor: not-allowed;
+      @include imgCardB;
+    }
+  }
+}
+
+// MEDIA QUERRIES MANAGE PATH
+@media only screen and (max-width: 800px) {
+  .pathBed,
+  .pathEvent,
+  .pathFood {
+    div {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 10%;
+    }
+  }
+}
+
+// MEDIA QUERRIES FULL CRUD
+.manage_CRUD{
+  @include displayFullScreen;
+  margin: 5% 10%;
+.manage_mode_feed, .new_card{
+  width: 80%;
+  margin-bottom: 5%;
+  @include flexA;
+  justify-content: center;
+  align-items: center;
+}}
+
+// MEDIA QUERRIES FULL CRUD
+@media only screen and (max-width: 800px) {
+  .manage_CRUD{
+    margin: 10% 5%;
+    .manage_mode_feed, .new_card{
+      width: 90%;
+    }
+  }
+}

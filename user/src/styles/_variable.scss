@@ -1,0 +1,29 @@
+// Naming the components to import with underscore before names
+
+// MAIN
+$white: #FFFF;
+$red: #BD5757;
+$slate: #798897;
+$txt: #1e1e1e;
+$black: #000000;
+
+// SECONDARY
+$transparent: #fffdef00;
+$mid_transparent: rgba(255, 255, 255, 0.58);
+$strong_transparent: rgba(255, 255, 255, 0.769);
+$light_grey:#FCFBFA;
+$cream: #FFFDEF;
+$yellow: #FFC107;
+$pink: #F68383;
+$verdigris: #ECF0EB;
+$light_blue: #C8DBFF;
+$blue: #4F8AA3;
+$slate_transparent: #7988976c;
+$medium_grey: #CDC9C9;
+$dark_grey: #3D3D3D;
+
+
+// UTILITIES
+$articles_shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+$calendar_shadow: 0px 5px 20px rgba(0, 0, 0, 0.05);
+$card_shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

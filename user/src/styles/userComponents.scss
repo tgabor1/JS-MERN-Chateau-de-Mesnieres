@@ -1,0 +1,207 @@
+@import "./_fonts.scss";
+@import "./_variable.scss";
+@import "./_mixin.scss";
+@import "~bootstrap/scss/bootstrap";
+
+// cardEvent
+
+.card_event {
+  height: 18vh;
+  width: 100%;
+  @include flexA;
+
+  .card_eventHeader {
+    display: flex;
+    width: 100%;
+    padding-inline: 2%;
+    h4 {
+      height: 3vh;
+      width: 85%;
+      font-size: 2.2vh;
+      font-weight: 600;
+      padding-left: 15%;
+      text-align: center;
+    }
+    h5 {
+      height: 3vh;
+      width: 15%;
+      font-size: 2.2vh;
+      font-weight: 500;
+      text-align: center;
+      background-color: $cream;
+      border: 0.1vh $txt solid;
+    }
+  }
+  .card_eventMain {
+    height: 15vh;
+    @include flexB;
+
+    .event_img {
+      width: 32%;
+      padding: 0;
+      height: inherit;
+      margin-right: 2%;
+      border: $txt solid 0.1vh;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+      img {
+        width: 100%;
+        height: 14.8vh;
+        object-fit: cover;
+        border: $txt solid 0.1vh;
+      }
+    }
+    .event_body {
+      @include flexB;
+      align-items: center;
+      width: 70%;
+      padding: 1%;
+      height: inherit;
+      border: $txt solid 0.1vh;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      span {
+        width:100%;
+        font-size: 1.6vh;
+        display: block;
+      }
+    }
+  }
+  &:hover {
+    .event_img,
+    .event_body {
+      box-shadow: 10px 10px 0px $cream;
+    }
+    .event_img{
+    filter: brightness(123%) saturate(212%);
+    -webkit-filter: brightness(123%) saturate(212%);
+    -moz-filter: brightness(123%) saturate(212%);
+  }
+  }
+}
+
+// card media
+
+.card_media {
+  height:max-content;
+  h4 {
+    height: 5vh;
+    padding-block: 3%;
+    font-size: 2.2vh;
+    font-weight: 600;
+  }
+  .card_media_main {
+    padding: 3%;
+    border: $txt solid 0.1vh;
+
+    span{
+      padding: 2%;
+      font-size: 1.8vh;
+      display: block;
+    }
+    iframe {
+      width: 100%;
+      height: 30vh;
+    }
+  }
+}
+
+
+// PARC ET DOMAINE
+#main_parkAndDomain {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .container-fluid {
+    width: 80%;
+    background-color: $verdigris;
+    margin-top: 14%;
+    margin-inline: 10%;
+    height: 250vh;
+
+    img {
+      width: 60%;
+      height: auto;
+      margin-top: -14%;
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  // CONTENT ARTICLES FROM 1 TO 3
+  section {
+    margin: 0;
+    position: absolute;
+    margin-top: 2%;
+    padding: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: -15%;
+
+    h2 {
+      text-align: center;
+      margin-left: 30vh;
+      margin-block: 3vh;
+      font-size: 1.5vw;
+      font-weight: 600;
+    }
+
+    .article1,
+    #article2 {
+      padding-inline: 12%;
+
+      .img1 {
+        position: absolute;
+        left: 17%;
+        margin-top: -3%;
+      }
+
+      #img2 {
+        position: absolute;
+        right: 4%;
+        margin-top: -3%;
+      }
+
+      .span_firstLetter {
+        @include majChanges;
+      }
+
+      p {
+        width: 90%;
+        height: 50%;
+        border: 0.1vh solid;
+        background-color: $white;
+        font-weight: 400;
+        font-size: 0.9vw;
+        padding: 5% 5% 5% 33%;
+        margin: 0% 0% 10% 20%;
+
+        #btn_artisan {
+          @include btnType1;
+          margin: 5% 0% -3% 35%;
+
+          #Icon_ceramist{
+            position: absolute;
+            left: 55%;
+            height: 90%;
+            width: 90%;
+            display: none;
+          }
+          &:hover{
+            #Icon_ceramist{
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    #article2 {
+      p {
+        padding: 5% 33% 5% 5%;
+        margin: 0% 0% 10% 8%;
+      }
+    }
+  }
+}

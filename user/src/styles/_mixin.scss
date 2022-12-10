@@ -1,0 +1,149 @@
+@import "./_variable.scss";
+@import "~bootstrap/scss/bootstrap";
+
+@mixin displayFullScreen{
+  width: 100%;
+  height: auto;
+}
+
+// menu
+@mixin imgCardA {
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+// path
+@mixin imgCardB {
+  margin: 5% 5% 10% 5%;
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+// flex basic column
+@mixin flexA{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// flex basic row
+@mixin flexB{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@mixin center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+// form
+@mixin form{
+  height: 6vh;
+  border: $txt solid 0.1vh;
+  color: $dark_grey !important;
+  font-size: 2vh !important;
+  resize: none;
+  &:focus {
+    box-shadow: 0 0 0 0.5vh $slate_transparent;
+    border-color: $slate;
+  }
+  select option:checked {
+    background-color: $slate !important; /* for IE */
+    color: $white !important;
+  }
+}
+
+// form button
+@mixin btnForm{
+  font-size: 2vh;
+  background-color: $white;
+  border: $txt solid 0.1vh;
+}
+
+// HOME NAV BAR
+@mixin homeNav {
+  background-color: $black;
+  height: 9vh;
+  display: flex;
+  flex-direction: row;
+
+  .btn,
+  .btn-primary {
+    background-color: $black !important;
+    color: $white !important;
+    padding-inline: 5vh !important;
+    font-size: 1.1vw !important;
+    border-block: 0.2vw $black solid !important;
+    border-inline: none;
+    outline: none !important;
+
+    img {
+      width: 7vh;
+      height: 7vh;
+      margin-right: 3vh;
+    }
+
+      img {
+        filter: brightness(0%);
+      }
+  }
+}
+
+// HOME NAV BAR 2
+@mixin homeNavPath {
+  span {
+    border: 0.1vh solid $white;
+  }
+
+  h3 {
+    color: $white;
+    font-size: 1.1vw;
+    margin-block: auto;
+    padding-inline: 5vh;
+  }
+}
+
+// first letter font change
+@mixin majChanges{
+  font-size: 4vw;
+  font-family: 'Handmagic Signature';
+  margin: 0em 0.3em 0em -0.5em;
+  line-height: 0.1em;
+}
+
+@mixin btnType1{
+  width: 30%;
+  font-size: 0.9vw;
+  display: flex;
+  background-color: $white;
+  filter:drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border: solid 0.1vw!important;
+
+  &:hover{
+    color: $white;
+    background-color: $black;
+  }
+}
+// calendar color map
+@mixin colorMap{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-block: 1%;
+  width: 100%;
+  .color {
+    height: 2.5vh;
+    width: 2.5vh;
+    border: 0.2vh solid $main_txt;
+    border-radius: 2px;
+    margin-inline: 5%;
+  }
+  p {
+    font-weight: 500;
+    font-size: 1.2vh;
+  }
+}

@@ -1,0 +1,354 @@
+@import "./_fonts.scss";
+@import "./_variable.scss";
+@import "./_mixin.scss";
+@import "~bootstrap/scss/bootstrap";
+
+// btn recall
+.btnReturn {
+  text-decoration: none;
+
+  div {
+    margin: 2% 2% 0% 3%;
+    width: 15%;
+    height: auto;
+    @include flexB;
+    cursor: pointer;
+
+    img {
+      width: 6vh;
+      height: auto;
+    }
+
+    h4 {
+      font-size: 2.2vh;
+      font-weight: 700;
+      margin: 3% 3% 3% 15%;
+    }
+  }
+}
+
+// component for cards menu
+.card_back {
+  height: 55vh;
+  width: 30vh;
+  display: block;
+  @include flexB;
+  justify-content: center;
+  position: relative;
+  border-radius: 9px;
+  text-decoration: none;
+  filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.75));
+  transition: all 0.3s ease-out;
+  overflow: hidden;
+  z-index: 0;
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: $mid_transparent;
+    height: inherit;
+    left: -35px;
+    width: 23px;
+    transform: scale(2);
+    transition: transform 0.25s ease-in;
+  }
+
+  &:hover:before {
+    transform: scale(35);
+  }
+
+  h3 {
+    font-weight: 500;
+    font-size: 2.5vh;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px $black;
+    text-align: center;
+    transition: all 0.3s ease-out;
+  }
+}
+
+// component card create time
+
+.cardTime {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 10vh;
+  margin: 2% 7% 0% 7%;
+  @include flexB;
+
+  &:hover {
+    div:first-child,
+    div:last-child {
+      background-color: $txt;
+
+      p {
+        color: $white;
+      }
+      img {
+        filter: brightness(0) saturate(100%) invert(99%) sepia(3%)
+          saturate(832%) hue-rotate(282deg) brightness(116%) contrast(100%);
+      }
+    }
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 2.2vh;
+  }
+
+  div {
+    height: inherit;
+    @include center;
+    border: 0.1vh $txt solid;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  div:first-child {
+    width: 20%;
+    border-right: none;
+  }
+
+  div:nth-child(2) {
+    width: 55%;
+    margin-right: 4%;
+    padding-left: 5%;
+  }
+
+  div:last-child {
+    width: 30%;
+
+    img {
+      width: 4vh;
+      height: auto;
+    }
+  }
+}
+
+// component card edit
+.cardTimeEdit {
+  width: 100%;
+  height: 10vh;
+  margin: 2% 7% 2% 7%;
+  @include center;
+
+  p {
+    font-weight: 500;
+    font-size: 2.2vh;
+  }
+
+  div,
+  a {
+    height: inherit;
+    @include center;
+    border: 0.1vh $txt solid;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  div:first-child {
+    width: 20%;
+    border-right: none;
+  }
+
+  div:nth-child(2) {
+    width: 55%;
+    margin-right: 4%;
+    padding-left: 5%;
+  }
+
+  div:nth-child(3),
+  a {
+    width: 15%;
+    padding-left: 5%;
+
+    img {
+      width: 4vh;
+      margin-right: 35%;
+      height: auto;
+    }
+
+    &:hover {
+      background-color: $txt;
+
+      p {
+        color: $white;
+      }
+      img {
+        filter: brightness(0) saturate(100%) invert(99%) sepia(3%)
+          saturate(832%) hue-rotate(282deg) brightness(116%) contrast(100%);
+      }
+    }
+  }
+
+  a {
+    border-left: none;
+  }
+}
+
+// media querries new card / edit card
+@media only screen and (max-width: 800px) {
+  .cardTimeEdit,
+  .cardTime {
+    height: 6vh;
+
+    p {
+      font-weight: 500;
+      font-size: 1.6vh;
+    }
+    img {
+      width: 3vh;
+    }
+  }
+  .cardTimeEdit {
+    div:nth-child(3),
+    a {
+      width: 15%;
+      padding-left: 5%;
+    }
+  }
+}
+
+// form
+
+.formA {
+  padding: 3% 4% 3% 4%;
+
+  span {
+    font-size: 3vh;
+    color: $red;
+  }
+
+  .halfsize {
+    width: 48%;
+  }
+
+  .form-label {
+    margin-block: 4vh;
+
+    input,
+    textarea,
+    select {
+      @include form;
+    }
+
+    select option:checked {
+      background: linear-gradient(#d6d6d6, #d6d6d6);
+      background-color: $red !important; /* for IE */
+      color: $white !important;
+    }
+
+    ::placeholder,
+    input[type="file"] {
+      color: $slate !important;
+      font-size: 1vw !important;
+    }
+
+    // check marker
+    .form-check-input {
+      height: 2vh;
+      &:before,
+      &:after,
+      &:focus {
+        border-color: $dark_grey;
+        background-color: $white;
+        box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.438);
+      }
+      &:checked {
+        background-color: $red;
+        box-shadow: 0 0 0 0.2rem rgba(214, 96, 96, 0.438);
+        border-color: $txt;
+      }
+    }
+  }
+  .btn.btn-primary {
+    width: 30% !important;
+    padding: 1% 11%;
+    margin-inline: 35%;
+  }
+
+  .btn.btn-primary.btn2{
+    width: 33%!important;
+    margin: 6% 35% 2% 35%;
+    font-size: 2vh;
+    font-weight: 500;
+    background-color: $white;
+    border: $txt solid 0.1vh;
+
+    &:hover {
+      background-color: $txt;
+      color: $white;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .formA{
+    .btn.btn-primary.btn2{
+      width: 100%!important;
+      margin: 20% 0% 2% 0%!important;
+    }
+  }
+}
+
+// .formModerator {
+//   margin: 7% 15%;
+//   padding: 5%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   width: 70%;
+//   border-radius: 1vw;
+//   box-shadow: $articles_shadow;
+
+//   h2 {
+//     font-size: 1.5vw;
+//     text-align: center;
+//     margin-bottom: 8vh;
+//   }
+//   span {
+//     font-size: 2vw;
+//     color: $red;
+//   }
+
+//   .form-check-input {
+//     &:before,
+//     &:after,
+//     &:focus {
+//       border-color: $dark_grey;
+//       background-color: $white;
+//       box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.438);
+//     }
+//     &:checked {
+//       background-color: $red;
+//       box-shadow: 0 0 0 0.2rem rgba(214, 96, 96, 0.438);
+//       border-color: $txt;
+//     }
+//   }
+
+//   #formGroupAssociation,
+//   #formGroupFirstName,
+//   #formGroupLastName,
+//   #formGroupAssociation,
+//   textarea,
+//   #formGroupEmail,
+//   #formGroupPhone {
+//     border-color: $txt;
+//     font-size: 1.2vw !important;
+//     font-style: italic;
+//     resize: none;
+//     &:focus {
+//       box-shadow: 0 0 0 0.2rem rgba(214, 96, 96, 0.438);
+//       border-color: $red;
+//     }
+//   }
+//   .inputhalf {
+//     width: 49%;
+//   }
+
+//   button.btn.btn-primary {
+//     width: 30% !important;
+//     @include btnType1;
+//     padding: 1% 11%;
+//     margin-inline: 35%;
+//   }
+// }
